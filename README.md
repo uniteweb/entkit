@@ -85,7 +85,7 @@ Intercept query to auto-filter soft-deleted records:
 ```go
 client.Intercept(softdelete.Interceptor())
 
-client.Debug().User.Query().Where(user.NameEQ("test")).AllX(ctx)
+client.Debug().User.Query().Where(user.NameEQ("Alice")).AllX(ctx)
 
 // SQL:
 // SELECT `users`.`id`, `users`.`deleted_at`, `users`.`name`, `users`.`age` 
@@ -96,7 +96,7 @@ client.Debug().User.Query().Where(user.NameEQ("test")).AllX(ctx)
 Skip soft delete filter:
 
 ```go
-client.Debug().User.Query().Where(user.NameEQ("test")).AllX(
+client.Debug().User.Query().Where(user.NameEQ("Alice")).AllX(
     softdelete.Skip(ctx),
 )
 
@@ -143,7 +143,7 @@ interval := 1 * time.Second
 
 err := client.User.UpdateOneWithLockAndRetry(ctx, userID, oldVersion, func(uvuo *ent.UserUpdateOne) *ent.UserUpdateOne {
     return uvuo.SetName("Alice").SetAge(18)
-})
+}, retryCount, interval)
 
 // Retries on version conflict
 ```

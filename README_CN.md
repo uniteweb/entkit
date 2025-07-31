@@ -131,7 +131,7 @@ interval := 1 * time.Second
 
 err := client.User.UpdateOneWithLockAndRetry(ctx, userID, oldVersion, func(u *ent.UserUpdateOne) *ent.UserUpdateOne {
 	return u.SetName("Alice").SetAge(18)
-})
+}, retryCount, interval)
 ```
 
 ---
