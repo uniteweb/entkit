@@ -15,16 +15,10 @@ import (
 // to their package variables.
 func init() {
 	userMixin := schema.User{}.Mixin()
-	userMixinFields0 := userMixin[0].Fields()
-	_ = userMixinFields0
 	userMixinFields1 := userMixin[1].Fields()
 	_ = userMixinFields1
 	userFields := schema.User{}.Fields()
 	_ = userFields
-	// userDescDeletedAt is the schema descriptor for deleted_at field.
-	userDescDeletedAt := userMixinFields0[0].Descriptor()
-	// user.DefaultDeletedAt holds the default value on creation for the deleted_at field.
-	user.DefaultDeletedAt = userDescDeletedAt.Default.(time.Time)
 	// userDescCreatedAt is the schema descriptor for created_at field.
 	userDescCreatedAt := userMixinFields1[0].Descriptor()
 	// user.DefaultCreatedAt holds the default value on creation for the created_at field.

@@ -13,6 +13,8 @@ import (
 
 func main() {
 
+	var err error
+
 	softdelete, err := softdelete.NewExtension()
 
 	if err != nil {

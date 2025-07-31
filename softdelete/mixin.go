@@ -2,7 +2,6 @@ package softdelete
 
 import (
 	"context"
-	"time"
 
 	"entgo.io/ent"
 	"entgo.io/ent/schema/field"
@@ -25,7 +24,7 @@ type SoftDeleteMixin struct {
 
 func (SoftDeleteMixin) Fields() []ent.Field {
 	return []ent.Field{
-		field.Time(SoftDeleteField).Optional().Nillable().Default(time.Now()).Comment("软删除时间"),
+		field.Time(SoftDeleteField).Optional().Nillable().Comment("软删除时间"),
 	}
 }
 

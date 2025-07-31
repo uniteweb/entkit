@@ -26,8 +26,23 @@ func TestSoftDelete(t *testing.T) {
 	// client.Debug().User.Create().
 
 	client.Debug().User.Create().SetName("Alice").SetAge(18).ExecX(t.Context())
-	client.Debug().User.Query().Where(user.NameEQ("Alice")).AllX(t.Context())
-	client.Debug().User.SoftDelete(t.Context(), 1)
+	cc := client.Debug().User.Query().Where(user.NameEQ("Alice")).FirstX(t.Context())
+
+	err = client.Debug().User.SoftDelete(t.Context(), cc.ID)
+
+	if err != nil {
+		t.Fatalf("error soft deleting user: %v", err)
+	}
+
+	ccCopy := client.Debug().User.Query().Where(user.NameEQ("Alice")).FirstX(t.Context())
+
+	if ccCopy == nil {
+		t.Logf("ccCopy is null")
+
+	}
+
+	// t.Logf("CC is %v", cc)
+	// client.Debug().User.SoftDelete(t.Context(), 1)
 
 }
 
