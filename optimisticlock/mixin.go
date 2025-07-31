@@ -8,7 +8,6 @@ import (
 
 type OptimisticLockMixin struct {
 	mixin.Schema
-	mixin.CreateTime
 }
 
 func (OptimisticLockMixin) Fields() []ent.Field {

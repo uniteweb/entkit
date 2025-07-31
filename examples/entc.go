@@ -13,7 +13,7 @@ import (
 
 func main() {
 
-	softdelete, err := softdelete.NewExstension()
+	softdelete, err := softdelete.NewExtension()
 
 	if err != nil {
 		log.Fatalf("error creating softdelete extension: %v", err)

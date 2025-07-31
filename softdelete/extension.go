@@ -31,7 +31,7 @@ type SoftDeleteAnnotation struct {
 	PkgAlias string
 }
 
-func NewExstension() (*SoftDeleteExtension, error) {
+func NewExtension() (*SoftDeleteExtension, error) {
 
 	return &SoftDeleteExtension{}, nil
 }
