@@ -19,7 +19,7 @@
 ## 🔧 Installation
 
 ```bash
-go get github.com/your-org/entkit@latest
+go get github.com/uniteweb/entkit@latest
 ```
 
 ---
