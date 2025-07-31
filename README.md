@@ -4,6 +4,7 @@
 
 **EntKit** is a utility toolkit for the Ent ORM, providing common schema enhancements, method extensions, and query helpers to help you build entity logic more efficiently.
 
+[Chinese version](https://github.com/uniteweb/entkit/blob/main/README_CN.md)
 ---
 
 ## 📦 Features
