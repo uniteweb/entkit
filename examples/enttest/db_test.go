@@ -13,7 +13,7 @@ import (
 
 func TestSoftDelete(t *testing.T) {
 
-	drv, err := sql.Open("sqlite3", "file:ent?mode=memory&cache=shared&_fk=1")
+	drv, err := sql.Open("sqlite3", "file:e1nt?mode=memory&cache=shared&_fk=1")
 
 	if err != nil {
 		t.Fatalf("error creating sqlite driver: %v", err)

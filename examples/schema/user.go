@@ -3,6 +3,7 @@ package schema
 import (
 	"entgo.io/ent"
 	"entgo.io/ent/schema/field"
+	"github.com/uniteweb/entkit"
 	"github.com/uniteweb/entkit/optimisticlock"
 	"github.com/uniteweb/entkit/softdelete"
 )
@@ -14,7 +15,7 @@ type User struct {
 
 func (User) Mixin() []ent.Mixin {
 
-	return []ent.Mixin{softdelete.SoftDeleteMixin{}}
+	return []ent.Mixin{softdelete.SoftDeleteMixin{}, entkit.TimeMixin{}}
 }
 
 // Fields of the User.
